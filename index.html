@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Clock</title>
+
+    <style>
+      #analog {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        position: relative;
+      }
+      .screen {
+        background-image: url(./images/landscape.jfif);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .hand {
+        position: absolute;
+        background: #000;
+        transform-origin: center bottom;
+        left: 50%;
+      }
+      #hourHand {
+        width: 4px;
+        height: 90px;
+        top: 3px;
+      }
+      #minuteHand {
+        width: 2px;
+        height: 90px;
+        top: 3px;
+      }
+      #secondHand {
+        width: 1px;
+        height: 90px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="screen relative text-white flex flex-col justify-around items-center w-screen h-screen"
+    >
+      <h2 class="text-3xl absolut top-1/2">Current Time:</h2>
+      <section
+        id="digital"
+        class="flex justify-around w-3/4 h-1/2 items-center"
+      >
+        <div
+          id="hours"
+          class="border-2 text-5xl font-bold border-green-500 w-[20%] h-1/2 flex items-center justify-center"
+        ></div>
+        <div
+          id="minutes"
+          class="border-2 text-5xl font-bold border-green-500 w-[20%] h-1/2 flex items-center justify-center"
+        ></div>
+        <div
+          id="seconds"
+          class="border-2 text-5xl font-bold border-green-500 w-[20%] h-1/2 flex items-center justify-center"
+        ></div>
+      </section>
+      <section class="">
+        <div id="analog" class="hidden">
+          <div class="hand" id="hourHand"></div>
+          <div class="hand" id="minuteHand"></div>
+          <div class="hand" id="secondHand"></div>
+        </div>
+      </section>
+
+      <button
+        id="submit"
+        type="submit"
+        class="w-1/2 p-4 text-white bg-slate-500 rounded-md"
+      >
+        Switch to analog
+      </button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
